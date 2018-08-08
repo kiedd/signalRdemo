@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h2>
+    Simple SignalR hub client
+  </h2>
+</div>
+<div>
+  <label>
+    Message type:
+    <input type="text" [(ngModel)]="messageType">
+  </label>
+  <label>
+      Message payload:
+      <input type="text" [(ngModel)]="messagePayload">
+    </label>
+    <button (click)="sendMessage()" [disabled]="!messagePayload || !messageType">Submit</button>
+</div>
+<div>
+    <button (click)="toggleTimer()">{{(timer) ? "Stop timer" : "Start timer" }}</button>
+</div>
+<ul>
+  <li *ngFor="let msg of msgs">
+    Type: {{msg.type}}; Payload: {{msg.payload}}
+  </li>
+</ul>
+
